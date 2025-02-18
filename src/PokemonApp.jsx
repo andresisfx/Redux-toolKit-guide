@@ -13,8 +13,8 @@ export const PokemonApp = () => {
   useEffect(() => {
     dispatch(getPokemonsThunk())
   }, [])
-  // const {page,pokemons} = useSelector((state) => state.pokemons)
-  // console.log(page,pokemons)
+  const {page,pokemons} = useSelector((state) => state.pkemon)
+  console.log(page,pokemons)
   return (
     <>
        <h1>PokemonApp</h1>
