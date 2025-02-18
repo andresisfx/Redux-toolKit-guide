@@ -1,6 +1,20 @@
-import React from 'react'
+import React,{ useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { getPokemonsThunk } from './store/slices/pokemon/thunk'
+
+
+
 
 export const PokemonApp = () => {
+
+  const dispatch = useDispatch()
+  
+
+  useEffect(() => {
+    dispatch(getPokemonsThunk())
+  }, [])
+  // const {page,pokemons} = useSelector((state) => state.pokemons)
+  // console.log(page,pokemons)
   return (
     <>
        <h1>PokemonApp</h1>
