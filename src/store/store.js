@@ -3,8 +3,8 @@ import {counterSlice, PokemonSlice} from './slices'
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer,
-    pokemon:PokemonSlice.reducer
+    counterStore: counterSlice.reducer,
+    pokemonStore:PokemonSlice.reducer
   },
 })
 

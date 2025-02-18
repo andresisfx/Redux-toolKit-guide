@@ -13,19 +13,24 @@ export const PokemonApp = () => {
   useEffect(() => {
     dispatch(getPokemonsThunk())
   }, [])
-  const {page,pokemons} = useSelector((state) => state.pkemon)
+  const {isLoading,page,pokemons} = useSelector((state) => state.pokemonStore)
   console.log(page,pokemons)
   return (
     <>
        <h1>PokemonApp</h1>
 
        <hr />
+       <h2>Page: {page} is loading: {isLoading.toString()}</h2>
        <ul>
-        <li>hi i a here</li>
-        <li>hi i a here</li>
-        <li>hi i a here</li>
-        <li>hi i a here</li>
+         {
+          pokemons.map((pokemon) => (
+            <li key={pokemon.name}>{pokemon.name}</li>
+          ))
+         }
        </ul>
+       <button onClick={() => dispatch(getPokemonsThunk(page))}>
+         Next
+       </button>
     </>
   )
 }
